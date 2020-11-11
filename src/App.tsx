@@ -5,6 +5,8 @@ import Body from "./components/body"
 import ResumeInterface from "./interfaces/resume.interface";
 import RESUME_BFF from "./services/client.services";
 
+import Spinner from "./components/spinner";
+
 const App: React.FC = () => {
     const [{
         name, technologies, scrumUrl, presentation, phone, LinkedInUrl, jobs, interests, githubUrl, email,
@@ -23,19 +25,21 @@ const App: React.FC = () => {
         educations: [],
         interests: [],
     });
-
+    const [loading, setLoading] = useState(false)
     useEffect(() => {
+        setLoading(true)
         const email = 'instanciageek@gmail.com'
         const getResumeByEmail = () => {
             RESUME_BFF.get(`resume?email=${email}`)
                 .then(response => {
                     setResume(response.data);
+                    setLoading(false)
                 })
         };
         getResumeByEmail();
     }, []);
 
-    return (
+    return loading ? (<Spinner />) : (
         <article className="resume-wrapper text-center position-relative">
             <div className="resume-wrapper-inner mx-auto text-left bg-white shadow-lg">
                 <Header name={name}
