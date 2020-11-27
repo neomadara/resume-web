@@ -36,7 +36,7 @@ const App: React.FC = () => {
                     setLoading(false)
                 })
         };
-        getResumeByEmail();
+        getResumeByEmail(); // dummy commit
     }, []);
 
     return loading ? (<Spinner />) : (
