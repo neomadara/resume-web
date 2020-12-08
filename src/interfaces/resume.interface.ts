@@ -8,7 +8,7 @@ export default interface ResumeInterface {
     appointment?: string;
     email?: string;
     phone?: string;
-    LinkedInUrl?: string;
+    linkedInUrl?: string;
     githubUrl?: string;
     scrumUrl?: string;
     presentation?: string | undefined;

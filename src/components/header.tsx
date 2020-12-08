@@ -5,7 +5,7 @@ interface HeaderInterface {
   appointment?: string;
   email?: string;
   phone?: string;
-  LinkedInUrl?: string;
+  linkedInUrl?: string;
   githubUrl?: string;
   scrumUrl?: string;
 }
@@ -15,7 +15,7 @@ const Header: React.FC<HeaderInterface> = ({
   appointment,
   email,
   phone,
-  LinkedInUrl,
+  linkedInUrl,
   githubUrl,
   scrumUrl,
 }) => {
@@ -51,7 +51,7 @@ const Header: React.FC<HeaderInterface> = ({
                 <a
                   target="_blank"
                   rel="nofollow noopener noreferrer"
-                  href={LinkedInUrl}
+                  href={linkedInUrl}
                 >
                   <span className="fa-container text-center mr-2">
                     <i className="fab fa-linkedin-in fa-fw" />
@@ -88,7 +88,7 @@ const Header: React.FC<HeaderInterface> = ({
                   <span className="fa-container text-center mr-2">
                     <i className="fas fa-globe" />
                   </span>
-                  cristiangutierrez.xyz
+                  cristiangutierrez.dev
                 </a>
               </li>
             </ul>

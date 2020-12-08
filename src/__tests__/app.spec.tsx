@@ -3,7 +3,7 @@ import { render, queryByAttribute, RenderResult, cleanup, waitFor, act } from '@
 import '@testing-library/jest-dom/extend-expect'
 import mockedAxios from "../__mocks__/axios";
 import App from '../App'
-import ResumeData from "../resumeData";
+import ResumeData from "../__mocks__/resumeData";
 
 const getById = queryByAttribute.bind(null, 'id')
 let dom: RenderResult;

@@ -9,14 +9,14 @@ import Spinner from "./components/spinner";
 
 const App: React.FC = () => {
     const [{
-        name, technologies, scrumUrl, presentation, phone, LinkedInUrl, jobs, interests, githubUrl, email,
+        name, technologies, scrumUrl, presentation, phone, linkedInUrl, jobs, interests, githubUrl, email,
         educations, appointment
     }, setResume] = useState<ResumeInterface>({
         name: "",
         appointment: "",
         email: "",
         phone: "",
-        LinkedInUrl: "",
+        linkedInUrl: "",
         githubUrl: "",
         scrumUrl: "",
         presentation:"",
@@ -33,6 +33,7 @@ const App: React.FC = () => {
             RESUME_BFF.get(`resume?email=${email}`)
                 .then(response => {
                     setResume(response.data);
+                    console.log(response.data)
                     setLoading(false)
                 })
         };
@@ -46,7 +47,7 @@ const App: React.FC = () => {
                         appointment={appointment}
                         email={email}
                         phone={phone}
-                        LinkedInUrl={LinkedInUrl}
+                        linkedInUrl={linkedInUrl}
                         githubUrl={githubUrl}
                         scrumUrl={scrumUrl}/>
                 <Body presentation={presentation}
