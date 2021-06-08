@@ -33,7 +33,6 @@ const App: React.FC = () => {
             RESUME_BFF.get(`resume?email=${email}`)
                 .then(response => {
                     setResume(response.data);
-                    console.log(response.data)
                     setLoading(false)
                 })
         };
